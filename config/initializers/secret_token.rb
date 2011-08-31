@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-BackboneDemo::Application.config.secret_token = '9d85ff17b3693e75303e95c565942eda51adf7eaba109edc26d7c491dfc03f360dd418af123c8c17f483b2e30f51bf2806c2613bc6ab8386f2dc39f2cae3e883'
+Back31::Application.config.secret_token = '58ec818eea08b3cd39575fb38122c5a1a0089ccad5a51b2fba7a1ebb5ec151e064576727603585abc9333f55b9a684621fba75f12c666b5d75032dbdd2a0b41e'
