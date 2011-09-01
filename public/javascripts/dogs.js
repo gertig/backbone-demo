@@ -8,10 +8,10 @@ $(function(){
       return this.id ? '/dogs/' + this.id : '/dogs'; //Ternary, look it up if you aren't sure
     },
   
-    defaults: { dog: {
-      name: "None entered",
-      age: 0
-    }},
+    // defaults: { dog: {
+    //   name: "None entered",
+    //   age: 0
+    // }},
   
     initialize: function(){
       //Can be used to initialize Model attributes
@@ -65,7 +65,9 @@ $(function(){
       Dogs.bind('refresh', this.addAll);
       Dogs.bind('all', this.render);
       
-      Dogs.fetch(); //This Gets the Model from the Server
+      Dogs.fetch({success: function(mod, response) {
+        console.log("Thats cool: " + JSON.stringify(mod));
+      }}); //This Gets the Model from the Server
     },
     
     addOne: function(dog) {
