@@ -7,7 +7,7 @@ class DogsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json  { render :json => @dogs }
+      format.json { render json: @dogs }
     end
   end
 
@@ -18,7 +18,7 @@ class DogsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json  { render :json => @dog }
+      format.json { render json: @dog }
     end
   end
 
@@ -29,7 +29,7 @@ class DogsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json  { render :json => @dog }
+      format.json { render json: @dog }
     end
   end
 
@@ -45,11 +45,11 @@ class DogsController < ApplicationController
 
     respond_to do |format|
       if @dog.save
-        format.html { redirect_to(@dog, :notice => 'Dog was successfully created.') }
-        format.json  { render :json => @dog, :status => :created, :location => @dog }
+        format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
+        format.json { render json: @dog, status: :created, location: @dog }
       else
-        format.html { render :action => "new" }
-        format.json  { render :json => @dog.errors, :status => :unprocessable_entity }
+        format.html { render action: "new" }
+        format.json { render json: @dog.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -61,11 +61,11 @@ class DogsController < ApplicationController
 
     respond_to do |format|
       if @dog.update_attributes(params[:dog])
-        format.html { redirect_to(@dog, :notice => 'Dog was successfully updated.') }
-        format.json  { head :ok }
+        format.html { redirect_to @dog, notice: 'Dog was successfully updated.' }
+        format.json { head :ok }
       else
-        format.html { render :action => "edit" }
-        format.json  { render :json => @dog.errors, :status => :unprocessable_entity }
+        format.html { render action: "edit" }
+        format.json { render json: @dog.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -77,8 +77,8 @@ class DogsController < ApplicationController
     @dog.destroy
 
     respond_to do |format|
-      format.html { redirect_to(dogs_url) }
-      format.json  { head :ok }
+      format.html { redirect_to dogs_url }
+      format.json { head :ok }
     end
   end
 end
